@@ -8,7 +8,8 @@ public class Race : MonoBehaviour
     public Toggle toggle;
     private void Awake()
     {
-        if (toggle == null) toggle = GetComponent<Toggle>();
+        if (toggle == null)
+            toggle = GetComponent<Toggle>();
         toggle.onValueChanged.AddListener(ToggleRace);
     }
 
