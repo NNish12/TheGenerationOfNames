@@ -5,7 +5,9 @@ public class GenerateButton : MonoBehaviour
 {
     public UIManager ui;
     public TextMeshProUGUI generatedNameField;
-    public ElfGeneration elfGeneration; //изменить потом
+    public ElfGeneration elfGeneration;
+    public OrcGeneration orcGeneration;
+    public DwarfGeneration dwarfGeneration;
     private string generatedName = "Mudro"; //инициализация по умолчанию
     public string GeneratedName
     {
@@ -14,20 +16,19 @@ public class GenerateButton : MonoBehaviour
     }
     public void SetGeneratedName()
     {
-        // switch (race)
-        // {
-        //     case RaceType.Elf:
-        generatedNameField.text = elfGeneration.ElfGenerateName(ui.language, ui.gender);
-        // return "";
-        // case RaceType.Orc:
-        // case RaceType.Dwarf:
-        // }
+        switch (ui.race)
+        {
+            case RaceType.Elf:
+                generatedNameField.text = elfGeneration.ElfGenerateName();
+                break;
+            case RaceType.Orc:
+                generatedNameField.text = orcGeneration.OrcGenerateName();
+                break;
+            case RaceType.Dwarf:
+                generatedNameField.text = dwarfGeneration.DwarfGenerateName();
+                break;
+        }
+
     }
-    //создать метод, который принимает пол из ui менеджера
-    //и генерирует имя в зависимости от выбранной расы - выбор из трех методов,
-    //каждый из которых принимает пол
-    //
-    // generatedNameField.text = elfGeneration.ElfGenerateName(ui.genderType, ui.languageType);
-    // if (ui.languageType) elf.
 }
 public enum NamePartType { Prefix, Middle, Suffix }
