@@ -91,10 +91,10 @@ public class ToggleSwitch : MonoBehaviour, IPointerClickHandler
         switch (newState)
         {
             case false:
-                ui.SetLanguage(LanguageType.En);
+                ui.SetGender(GenderType.Male);
                 break;
             case true:
-                ui.SetLanguage(LanguageType.Rus);
+                ui.SetGender(GenderType.Female);
                 break;
         }
     }
