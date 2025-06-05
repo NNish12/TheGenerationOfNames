@@ -3,15 +3,16 @@ using UnityEngine;
 public class DwarfGeneration : MonoBehaviour
 {
     public UIManager ui;
-    private static readonly string[] prefixEn = { "Dur", "Balin", "Thro", "Gim", "Khar", "Mor", "Bram", "Dro", "Har", "Tor" };
-    private static readonly string[] middleEn = { "in", "ar", "or", "im", "un", "ak", "ul", "ad", "en", "ok" };
-    private static readonly string[] suffixMaleEn = { "in", "ar", "or", "im", "un", "ak", "ad" };
-    private static readonly string[] suffixFemaleEn = { "a", "ia", "ara", "ina", "ela", "ara", "ina" };
+    private static string[] prefixEn = { "Dur", "Balin", "Thro", "Gim", "Khar", "Mor", "Bram", "Dro", "Har", "Tor" };
+    private static string[] middleEn = { "in", "ar", "or", "im", "un", "ak", "ul", "ad", "en", "ok" };
+    private static string[] suffixMaleEn = { "in", "ar", "or", "im", "un", "ak", "ad" };
+    private static string[] suffixFemaleEn = { "a", "ia", "ara", "ina", "ela", "ara", "ina" };
 
-    private static readonly string[] prefixRus = { "Дур", "Бал", "Тро", "Гим", "Кар", "Мор", "Брам", "Дро", "Хар", "Тор" };
-    private static readonly string[] middleRus = { "ин", "ар", "ор", "им", "ун", "ак", "ул", "ад", "ен", "ок" };
-    private static readonly string[] suffixMaleRus = { "ий", "ар", "ор", "им", "ун", "ак", "ад" };
-    private static readonly string[] suffixFemaleRus = { "а", "ия", "ара", "ина", "ела", "ара", "ина" };
+    private static string[] prefixRus = { "Дур", "Бал", "Тро", "Гим", "Кар", "Мор", "Брам", "Дро", "Хар", "Тор" };
+    private static string[] middleRus = { "ин", "ар", "ор", "им", "ун", "ак", "ул", "ад", "ен", "ок" };
+    private static string[] suffixMaleRus = { "ий", "ар", "ор", "им", "ун", "ак", "ад" };
+    private static string[] suffixFemaleRus = { "а", "ия", "ара", "ина", "ела", "ара", "ина" };
+
     public string DwarfGenerateName()
     {
         int isMiddle = Random.Range(0, 2); // 0 - нет середины, 1 - есть середина
