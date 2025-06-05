@@ -5,14 +5,30 @@ public class GenerateButton : MonoBehaviour
 {
     public UIManager ui;
     public TextMeshProUGUI generatedNameField;
-    private string generatedName = "Default Name"; //инициализация по умолчанию
+    public ElfGeneration elfGeneration;
+    public OrcGeneration orcGeneration;
+    public DwarfGeneration dwarfGeneration;
+    private string generatedName = "Mudro"; //инициализация по умолчанию
     public string GeneratedName
     {
         get { return generatedName; }
         set { generatedName = value; }
     }
-    public void SetGeneratedName(string GeneratedName)
+    public void SetGeneratedName()
     {
-        generatedNameField.text = GeneratedName;
+        switch (ui.race)
+        {
+            case RaceType.Elf:
+                generatedNameField.text = elfGeneration.ElfGenerateName();
+                break;
+            case RaceType.Orc:
+                generatedNameField.text = orcGeneration.OrcGenerateName();
+                break;
+            case RaceType.Dwarf:
+                generatedNameField.text = dwarfGeneration.DwarfGenerateName();
+                break;
+        }
+
     }
 }
+public enum NamePartType { Prefix, Middle, Suffix }

@@ -9,12 +9,14 @@ public class Gender : MonoBehaviour
 
     private void Awake()
     {
-        if (toggle == null) toggle = GetComponent<Toggle>();
+        if (toggle == null)
+            toggle = GetComponent<Toggle>();
         toggle.onValueChanged.AddListener(ToggleGender); //подписка на событие
     }
 
     public void ToggleGender(bool isTrue)
     {
-        if (isTrue) ui.SetGender(genderType);
+        if (isTrue)
+            ui.SetGender(genderType);
     }
 }
